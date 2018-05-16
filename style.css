@@ -1,0 +1,22 @@
+
+
+#regiration_form fieldset:not(:first-of-type) {
+	display: none;
+}
+h2 {
+	text-align:center;
+}
+.error{
+	color:red;
+	visibility:hidden;
+}
+.max_w{
+	max-width:800px;
+}
+.next{
+	background-color:#ec008b;
+	color:white;
+}
+.g-recaptcha{
+	margin-top:3%;
+}

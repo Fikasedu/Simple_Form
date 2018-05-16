@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script src="script.js"></script>	
+		
+		<script><!-- function that make appear the button when you pass the captcha-->
+			function enableBtn(){
+			document.getElementById("submit_final").disabled = false;
+		}
+		</script>
+		
+	</head>
+	<body>
+	<div class="container max_w">
+	  <form id="regiration_form" novalidate action="action.php"  method="post">
+	  
+	  <fieldset id="field1">
+			<h2 class="col-md-12">Get a Free Verbal Valuation: Step 1</h2><br><br><hr>
+			<div class="col-md-12 form-group">
+				<label for="Postcode">Add your post code</label>
+				<input required type="text" class="form-control" id="Postcode" name="Postcode" placeholder="here...">
+				<label id="Postcode_error" class="error">Postcode error</label>
+			</div>
+			<div class="col-md-6 form-group">
+				<label for="Position">Position</label>
+				<select required name="Position" id="Position" class="form-control" form="regiration_form">
+				  <option disabled selected value> -- select an option -- </option>
+				  <option value="Nothing to sell">Nothing to sell</option>l
+				  <option value="House to sell">House to sell</option>
+				  <option value="House Sold STC">House Sold STC</option>
+				  <option value="Cash">Cash</option>
+				  <option value="First Time Buyer">First Time Buyer</option>
+				  <option value="Renting">Renting</option>
+				  <option value="Company Purchase">Company Purchase</option>
+				</select>
+				<label id="Position_error" class="error">Position error</label>
+			</div>
+			<div class="col-md-6 form-group">	
+				<label for="Bedrooms">Number of Bedrooms</label>			
+				<select required name="Bedrooms" id="Bedrooms" class="form-control" form="regiration_form">
+					<option disabled selected value> -- select an option -- </option>
+					<option value="1">Studio/1 bedroom</option>
+					<option value="2">2 bedrooms</option>
+					<option value="3">3 bedrooms</option>
+					<option value="4">4 bedrooms</option>
+					<option value="5">5 bedrooms</option>
+					<option value="6">6 bedrooms</option>
+					<option value="7">7 bedrooms</option>
+					<option value="8">8 bedrooms</option>
+					<option value="9">9 bedrooms</option>
+					<option value="10">10 bedrooms</option>
+				</select>
+				<label id="Bedrooms_error" class="error">Bedrooms error</label>
+			</div>
+			<input type="button" name="next" class="col-md-2 col-md-offset-6 next btn" value="Next"/>
+	  </fieldset>
+	  
+	  <fieldset id="field2">
+			<h2 class="col-md-12">Get a Free Verbal Valuation: Step 2</h2><br><br><hr>
+			<div class="col-md-6 form-group">
+				<label for="FirstNames">First Name</label>
+				<input type="text" class="form-control" name="FirstNames" id="FirstNames" placeholder="First Name">
+				<label id="FirstNames_error" class="error">FirstNames error</label>
+			</div>
+			<div class="col-md-6 form-group">
+				<label for="LastName">Last Name</label>
+				<input type="text" class="form-control" name="LastName" id="LastName" placeholder="Last Name">
+				<label id="LastName_error" class="error">LastName error</label>
+			</div>
+			<div class="col-md-6 form-group">
+				<label for="Telephone">Telephone</label>
+				<input type="text" class="form-control" name="Telephone" id="Telephone" placeholder="Telephone">
+				<label id="Telephone_error" class="error">Telephone error</label>
+			</div>
+			<div class="col-md-6 form-group">
+				<label for="Email">Email</label>
+				<input type="email" class="form-control" name="Email" id="Email" placeholder="Email">
+				<label id="Email_error" class="error">Email error</label>
+			</div>
+			<input type="button" name="previous" class="col-md-2 col-md-offset-3 previous btn btn-default" value="Previous" />
+			<input type="button" name="next" class="col-md-2 col-md-offset-1 next btn" value="Next"/>
+	  </fieldset>
+	  
+	  <fieldset id="field3">
+			<h2 class="col-md-12">Get a Free Verbal Valuation: Step 3</h2><br><br><hr>
+			<div class="col-md-12 form-group">
+				<label for="Notes">What is special about your property that would affect the value up or down</label>
+				<textarea  class="col-md-12 form-control" name="Notes" placeholder=""></textarea>
+			</div>
+			<div class="col-md-12 form-group">
+				<label for="Agree">Depending on market data available the valuer may need to contact you to learn more about your property.</label><br>
+				<label for="Agree">Do you agree that they can contact you?</label><br><br>
+				<div class="col-md-2 col-md-offset-3"><label>YES</label>&nbsp;<input type="radio" name="Agree" id="Agree" value="yes"></div>
+				<div class="col-md-2"><label>NO</label>&nbsp;<input type="radio" name="Agree" id="Agree" value="no"></div>
+				<label id="Agree_error" class="error">Agree error</label>
+			</div>	
+			<input type="button" name="previous" class="col-md-2 col-md-offset-3 previous btn btn-default" value="Previous" />
+			<input id="submit_final" type="submit" class="col-md-2 col-md-offset-1 next btn" value="Send" disabled/>
+			
+			<!--Erase this captcha and put yours-->
+			<div class="g-recaptcha col-md-8 col-md-offset-3" data-sitekey="6LczilUUAAAAAKriqsX4v6uYIR1McdFMT1ksR1v0" data-callback="enableBtn"></div>
+			
+	  </fieldset>  
+	  </form>
+	  </div>
+	</body>
+</html>
+
+
+
+  
